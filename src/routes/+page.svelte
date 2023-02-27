@@ -5,4 +5,3 @@
 </script>
 
 <Section1 />
-<Section2 />

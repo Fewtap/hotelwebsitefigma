@@ -1,4 +1,4 @@
-<div class="maincontainer">
+<div class="maincontainer" id="cardscontainer">
 	<div class="grid">
 		<div class="pagetitle">
 			<h1>Faciliteter</h1>
@@ -58,10 +58,28 @@
 					og oplev en uforglemmelig aften under midnatssolen eller det magiske nordlys.
 				</p>
 			</div>
-			<div class="actioncontainer numbercontaienr">
+			<div class="actioncontainer">
 				<div class="numbercontainer">
 					<h3>Book et bord her: <a href="tel:+299 00 00 00">+299 00 00 00</a></h3>
 				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="titlecontainer">
+				<h2>Faciliteter</h2>
+			</div>
+			<div class="descriptioncontainer">
+				<p>
+					Tag med på en kulinarisk rejse på vores tagterrasse-restaurant på Hotel Ilulissat. Nyd
+					vores lækre menu, som tilbyder autentiske grønlandske retter og en fantastisk udsigt over
+					Ilulissat Isfjord. Vores erfarne kokke vil tage dig med på en gastronomisk oplevelse, hvor
+					friske lokale råvarer og grønlandske traditioner er i fokus. Forkæl dig selv med vores
+					unikke cocktails og et udvalg af vin fra hele verden. Besøg vores tagterrasse-restaurant
+					og oplev en uforglemmelig aften under midnatssolen eller det magiske nordlys.
+				</p>
+			</div>
+			<div class="actioncontainer">
+				<button> Book her </button>
 			</div>
 		</div>
 	</div>
@@ -72,6 +90,7 @@
 		background-color: rgb(106, 181, 231);
 		padding: 1em;
 		border-radius: 20px;
+		max-height: 100%;
 	}
 
 	.maincontainer {
@@ -88,7 +107,8 @@
 		grid-column-start: 2;
 		grid-column-end: 3;
 		text-align: center;
-
+		grid-column-start: 2;
+		grid-column-end: 4;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -102,7 +122,7 @@
 		margin-inline: auto;
 		max-width: 90%;
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 		grid-gap: 2em;
 
@@ -120,8 +140,10 @@
 		grid-row-end: 6;
 		display: grid;
 		border-radius: 1em;
-		grid-template-rows: 20% 50% 1fr;
+		grid-template-rows: 20% 70% 10%;
+		grid-template-columns: 100%;
 		align-items: center;
+		padding: 2em;
 		justify-content: center;
 	}
 
@@ -140,19 +162,28 @@
 	}
 
 	.actioncontainer {
-		width: 100%;
-		height: 50%;
-		margin-top: 3em;
-		grid-column: span 2;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		grid-column-end: 2;
+		grid-column-start: 1;
+		height: 100%;
+	}
+
+	@media screen and (max-width: 1620px) {
+		.descriptioncontainer {
+			font-size: 0.7em;
+		}
+
+		h3 {
+			font-size: 0.8em;
+		}
 	}
 
 	button {
 		border-radius: 20px;
 		width: 50%;
-		height: 50%;
+		height: 100%;
 		background-color: rgb(106, 181, 231);
 		border: none;
 	}

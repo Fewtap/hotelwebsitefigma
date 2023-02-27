@@ -3,8 +3,8 @@
 	import { inview } from 'svelte-inview';
 	import { fade, slide } from 'svelte/transition';
 	import type { ObserverEventDetails, ScrollDirection, Options } from 'svelte-inview';
-	import { onMount } from 'svelte';
-	import Vague from 'vague';
+	import arrow from '../assets/images/downarrow.png';
+	import blacklogo from '../assets/images/logoblack.png';
 
 	let isInView: boolean = true;
 	let scrollDirection: ScrollDirection;
@@ -17,6 +17,12 @@
 		isInView = detail.inView;
 		scrollDirection = detail.scrollDirection.vertical;
 	};
+
+	function scrolltosection() {
+		let section2 = document.getElementById('cardscontainer');
+
+		section2?.scrollIntoView({ behavior: 'smooth' });
+	}
 </script>
 
 <div class="maincontainer" use:inview on:change={handleChange}>
@@ -25,16 +31,34 @@
 	<div class="centerdiv" transition:slide use:inview on:change={handleChange} class:show={isInView}>
 		<h1>Oplev det ultimative arktiske eventyr på</h1>
 		<div id="divider" />
-		<img
-			src="https://static.wixstatic.com/media/015531_11331bde76244c9db30c799c6b22fc00~mv2.png/v1/fill/w_363,h_127,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Hotel%20Ilulissat%20Logo%20-SORTSKRIFT.png"
-			alt="Logo of Hotel Ilulissat"
-		/>
+		<img id="logo" src={blacklogo} alt="Logo of Hotel Ilulissat" />
+		<div id="button" on:click={scrolltosection}>
+			<img src={arrow} />
+		</div>
 	</div>
 </div>
 
 <style>
+	h1 {
+		top: auto;
+		font-size: 4em;
+		text-align: center;
+		align-self: flex-end;
+	}
+	.centerdiv {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 45% 1fr 40% 5%;
+		height: 100%;
+		width: 60%;
+
+		margin: auto;
+		border-radius: 10px;
+	}
+
 	.maincontainer {
 		height: 100%;
+		width: 100%;
 
 		background: url('https://wallpapercave.com/wp/wp2378345.jpg');
 		background-size: cover;
@@ -49,15 +73,13 @@
 		text-align: center;
 		align-self: flex-end;
 	}
-	.centerdiv {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: 45% 1fr 45%;
-		height: 80%;
-		width: 60%;
 
-		margin: auto;
-		border-radius: 10px;
+	#button {
+		margin-inline: auto;
+		border-radius: 180%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	#divider {
@@ -66,9 +88,19 @@
 		height: 0px;
 	}
 
+	#button > img {
+		height: 100%;
+	}
+
 	img {
-		top: 0;
 		margin-inline: auto;
+
+		width: auto;
+	}
+
+	#logo {
+		height: 50%;
+		top: 0;
 	}
 
 	.show {
@@ -83,6 +115,25 @@
 		to {
 			opacity: 1;
 			transform: scale(1);
+		}
+	}
+
+	@media screen and (max-width: 800px) {
+		h1 {
+			font-size: 1em;
+		}
+
+		.centerdiv {
+			margin-inline: auto;
+		}
+
+		.centerdiv > img {
+			width: auto;
+			max-height: 20%;
+		}
+
+		#button > img {
+			height: 100%;
 		}
 	}
 </style>
