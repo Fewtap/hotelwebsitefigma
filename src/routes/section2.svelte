@@ -170,16 +170,6 @@
 		height: 100%;
 	}
 
-	@media screen and (max-width: 1620px) {
-		.descriptioncontainer {
-			font-size: 0.7em;
-		}
-
-		h3 {
-			font-size: 0.8em;
-		}
-	}
-
 	button {
 		border-radius: 20px;
 		width: 50%;
@@ -192,5 +182,29 @@
 		background-color: rgb(62, 117, 189);
 		box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.8);
 		transition: ease-in 0.2s;
+	}
+	@media screen and (max-width: 1620px) {
+		.descriptioncontainer {
+			font-size: 0.7em;
+		}
+
+		h3 {
+			font-size: 1em;
+		}
+
+		.grid {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			padding: 20px;
+		}
+
+		.maincontainer {
+			background-size: 100% 100%;
+		}
+
+		.maincontainer {
+			height: auto;
+		}
 	}
 </style>

@@ -6,29 +6,23 @@
 	import arrow from '../assets/images/downarrow.png';
 	import blacklogo from '../assets/images/logoblack.png';
 
-	let isInView: boolean = true;
-	let scrollDirection: ScrollDirection;
-	const options: Options = {
-		rootMargin: '-50px',
-		unobserveOnEnter: false
-	};
-
-	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>) => {
-		isInView = detail.inView;
-		scrollDirection = detail.scrollDirection.vertical;
-	};
+	let isInView: boolean = false;
 
 	function scrolltosection() {
 		let section2 = document.getElementById('cardscontainer');
 
 		section2?.scrollIntoView({ behavior: 'smooth' });
 	}
+
+	setTimeout(() => {
+		isInView = true;
+	}, 500);
 </script>
 
-<div class="maincontainer" use:inview on:change={handleChange}>
+<div class="maincontainer" transition:slide>
 	<!--this animation should start when the page is loaded-->
 
-	<div class="centerdiv" transition:slide use:inview on:change={handleChange} class:show={isInView}>
+	<div class="centerdiv" transition:slide class:show={isInView}>
 		<h1>Oplev det ultimative arktiske eventyr på</h1>
 		<div id="divider" />
 		<img id="logo" src={blacklogo} alt="Logo of Hotel Ilulissat" />
@@ -46,12 +40,11 @@
 		align-self: flex-end;
 	}
 	.centerdiv {
-		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: 45% 1fr 40% 5%;
 		height: 100%;
 		width: 60%;
-
+		display: none;
 		margin: auto;
 		border-radius: 10px;
 	}
@@ -105,6 +98,7 @@
 
 	.show {
 		animation: fadein 2s;
+		display: grid;
 	}
 
 	@keyframes fadein {
@@ -118,7 +112,7 @@
 		}
 	}
 
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: 960px) {
 		h1 {
 			font-size: 1em;
 		}
