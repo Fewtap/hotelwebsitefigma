@@ -104,19 +104,28 @@
 <style>
 	:global(body) {
 		background: url('https://static.wixstatic.com/media/nsplsh_65324d6e4b6c4546635467~mv2_d_7360_4912_s_4_2.jpg/v1/fill/w_2543,h_1556,al_t,q_90,usm_0.66_1.00_0.01,enc_auto/nsplsh_65324d6e4b6c4546635467~mv2_d_7360_4912_s_4_2.jpg');
+		background-repeat: repeat-y;
+		background-size: cover;
 	}
 	ul {
 		padding: 0;
+		font-family: Arial, Helvetica, sans-serif;
 	}
 
 	h2 {
 		text-align: center;
 	}
 
+	p {
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
 	h3 {
 		color: crimson;
 		font-weight: 900;
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		font-family: Arial, Helvetica, sans-serif;
+		/*make it bold*/
+		font-weight: bold;
 	}
 
 	div {
@@ -131,7 +140,7 @@
 
 	.left-column {
 		width: 30%;
-		background-color: #f1f1f1;
+		background-color: antiquewhite;
 		height: fit-content;
 		border-radius: 20px;
 		margin: 50px;
@@ -139,13 +148,15 @@
 	}
 
 	.right-column {
-		height: 1080px;
+		height: 95vh;
 		/*make the div scrollable but hide the scrollbar*/
 		overflow-y: scroll;
 		width: 50%;
-		background-color: #f1f1f1;
+		background-color: antiquewhite;
 		margin: 20px;
+		margin-top: 12.5%;
 		background-color: transparent;
+		/*set the margins on the top and botom so that the div is centered*/
 	}
 
 	.right-column::-webkit-scrollbar {
@@ -153,7 +164,7 @@
 	}
 
 	.card {
-		background-color: #f1f1f1;
+		background-color: antiquewhite;
 		height: 400px;
 		width: 100%;
 		display: flex;
@@ -252,6 +263,36 @@
 			margin: 20px;
 			font-size: 2em;
 			padding: 20px;
+		}
+	}
+
+	/*a media query for 4k screens*/
+	@media screen and (min-width: 2000px) {
+		.right-column {
+			width: 60%;
+
+			height: auto;
+			overflow-y: visible;
+		}
+		.left-column {
+			width: fit-content;
+			padding: 5%;
+		}
+
+		.card {
+			height: auto;
+			width: auto;
+			font-size: 1.3em;
+		}
+
+		.card > img {
+			min-height: 100%;
+		}
+
+		.left-column {
+			width: 50%;
+			padding: 5%;
+			font-size: xx-large;
 		}
 	}
 </style>
