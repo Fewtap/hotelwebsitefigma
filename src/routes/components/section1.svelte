@@ -3,8 +3,8 @@
 	import { inview } from 'svelte-inview';
 	import { fade, slide } from 'svelte/transition';
 	import type { ObserverEventDetails, ScrollDirection, Options } from 'svelte-inview';
-	import arrow from '../assets/images/downarrow.png';
-	import blacklogo from '../assets/images/logoblack.png';
+	import arrow from '../../assets/images/downarrow.png';
+	import blacklogo from '../../assets/images/logoblack.png';
 
 	let isInView: boolean = false;
 

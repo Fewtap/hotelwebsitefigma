@@ -21,7 +21,7 @@
 				</p>
 			</div>
 			<div class="actioncontainer">
-				<button> Book en Værelse </button>
+				<button> <a href="/rooms">Book en Værelse</a> </button>
 			</div>
 		</div>
 		<div class="card">
@@ -96,7 +96,7 @@
 		height: 100%;
 		width: 100%;
 
-		background-image: url(..\assets\images\Component1.png);
+		background-image: url(../..\assets\images\Component1.png);
 		background-size: cover;
 		overflow-y: visible;
 		display: flex;
