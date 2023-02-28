@@ -114,7 +114,7 @@
 
 	@media screen and (max-width: 960px) {
 		h1 {
-			font-size: 1em;
+			font-size: 1.5em;
 		}
 
 		.centerdiv {
@@ -123,7 +123,7 @@
 
 		.centerdiv > img {
 			width: auto;
-			max-height: 20%;
+			max-height: 25%;
 		}
 
 		#button > img {

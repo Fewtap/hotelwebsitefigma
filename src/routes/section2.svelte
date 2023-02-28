@@ -87,7 +87,6 @@
 
 <style>
 	.numbercontainer {
-		background-color: rgb(106, 181, 231);
 		padding: 1em;
 		border-radius: 20px;
 		max-height: 100%;
@@ -183,7 +182,7 @@
 		box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.8);
 		transition: ease-in 0.2s;
 	}
-	@media screen and (max-width: 1620px) {
+	@media screen and (max-width: 800px) {
 		.descriptioncontainer {
 			font-size: 0.7em;
 		}
@@ -205,6 +204,38 @@
 
 		.maincontainer {
 			height: auto;
+		}
+	}
+
+	@media screen and (min-width: 800px) and (max-width: 1200px) {
+		.grid {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			height: 100%;
+		}
+
+		.card {
+			width: 50%;
+			max-height: 15%;
+			font-size: x-small;
+			text-align: center;
+		}
+
+		.numbercontainer {
+		}
+
+		h3 {
+			font-size: small;
+		}
+
+		h2 {
+			font-size: large;
+		}
+
+		button {
+			height: fit-content;
 		}
 	}
 </style>
