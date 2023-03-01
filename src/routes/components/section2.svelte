@@ -96,7 +96,7 @@
 		height: 100%;
 		width: 100%;
 
-		background-image: url(../..\assets\images\Component1.png);
+		background-image: url('../../assets/images/Component1.png');
 		background-size: cover;
 		overflow-y: visible;
 		display: flex;

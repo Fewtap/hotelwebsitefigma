@@ -19,10 +19,10 @@
 	}, 500);
 </script>
 
-<div class="maincontainer" transition:slide>
+<div class="maincontainer">
 	<!--this animation should start when the page is loaded-->
 
-	<div class="centerdiv" transition:slide class:show={isInView}>
+	<div class="centerdiv" class:show={isInView}>
 		<h1>Oplev det ultimative arktiske eventyr på</h1>
 		<div id="divider" />
 		<img id="logo" src={blacklogo} alt="Logo of Hotel Ilulissat" />
@@ -33,11 +33,12 @@
 </div>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 	h1 {
-		top: auto;
+		font-family: 'Oswald', sans-serif;
 		font-size: 4em;
 		text-align: center;
-		align-self: flex-end;
+		color: #003c7e;
 	}
 	.centerdiv {
 		grid-template-columns: 1fr;
@@ -55,7 +56,7 @@
 
 		background: url('https://wallpapercave.com/wp/wp2378345.jpg');
 		background-size: cover;
-		backdrop-filter: blur(50px);
+		/*make the background darker*/
 
 		display: flex;
 	}
