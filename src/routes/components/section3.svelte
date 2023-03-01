@@ -21,7 +21,7 @@
 				hjertet af det arktiske paradis.
 			</p>
 		</div>
-		<a href="#" class="button">Button 1</a>
+		<a href="#" class="button">Vis mer information</a>
 	</div>
 	<div class="card">
 		<img
@@ -41,7 +41,7 @@
 				arbejde og afslapning i smukke omgivelser i hjertet af Ilulissat.
 			</p>
 		</div>
-		<a href="#" class="button">Button 2</a>
+		<a href="#" class="button">Vis mer information</a>
 	</div>
 	<div class="card">
 		<img
@@ -59,7 +59,7 @@
 				oplev en uforglemmelig aften under midnatssolen eller det magiske nordlys.
 			</p>
 		</div>
-		<a href="#" class="button">Button 3</a>
+		<a href="#" class="button">Book et bord på +299 00 00 00</a>
 	</div>
 	<div class="card">
 		<img
@@ -77,7 +77,7 @@
 				oplev en uforglemmelig aften under midnatssolen eller det magiske nordlys.
 			</p>
 		</div>
-		<a href="#" class="button">Button 4</a>
+		<a href="#" class="button">Vis mer information</a>
 	</div>
 </div>
 
@@ -181,22 +181,27 @@
 		font-family: 'Oswald', sans-serif;
 	}
 
-	@media screen and (max-width: 400px) {
+	@media screen and (max-width: 900px) {
 		#cardscontainer {
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			max-height: 100%;
+			justify-content: start;
+			background-size: cover;
+			background-repeat: repeat-y;
+			height: fit-content;
+			padding-top: 20px;
+			padding-bottom: 20px;
 		}
 
 		.card {
 			width: 80%;
-			height: 20%;
+			height: 30%;
 			font-size: 0.3rem;
 			margin: 10px;
+			padding: 10px;
 			/*only have 3 rows in the card*/
-			grid-template-rows: 1fr 1fr 1fr;
+			grid-template-rows: 10% 70% 20%;
+			background-color: #003d7e;
 		}
 
 		img {
@@ -205,18 +210,23 @@
 		}
 
 		.card h2 {
-			font-size: 2em;
+			font-size: 2.5em;
 			text-align: center;
 			margin: 20px;
 		}
 
 		h1 {
-			font-size: 1.5em;
+			font-size: 1.7em;
+		}
+
+		.descriptioncontainer {
+			height: 100%;
+			padding: 5%;
 		}
 
 		.card p {
-			margin: 5%;
-			font-size: 1.3em;
+			margin: 10%;
+			font-size: 2.5em;
 			font-weight: 300;
 		}
 
@@ -227,12 +237,6 @@
 			font-size: 1.5em;
 			min-height: 50%;
 			max-width: 20%;
-		}
-	}
-
-	@media (max-width: 992px) {
-		.cardscontainer {
-			grid-template-columns: repeat(4, 1fr);
 		}
 	}
 </style>

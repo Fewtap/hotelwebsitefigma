@@ -25,7 +25,18 @@
 	<div class="centerdiv" class:show={isInView}>
 		<h1>Oplev det ultimative arktiske eventyr på</h1>
 		<div id="divider" />
-		<img id="logo" src={blacklogo} alt="Logo of Hotel Ilulissat" />
+		<div class="logocontainer">
+			<img id="logo" src={blacklogo} alt="Logo of Hotel Ilulissat" />
+			<div class="buttonbookcontainer">
+				<button
+					><a
+						href="https://www.bestwestern.dk/booking-path/hotel-rooms/best-western-plus-hotel-ilulissat-ilulissat-96100"
+						>Book En værelse</a
+					></button
+				>
+			</div>
+		</div>
+
 		<div id="button" on:click={scrolltosection}>
 			<img src={arrow} />
 		</div>
@@ -42,11 +53,11 @@
 	}
 	.centerdiv {
 		grid-template-columns: 1fr;
-		grid-template-rows: 45% 1fr 40% 5%;
+		grid-template-rows: 40% 1% 35% 1fr 10%;
 		height: 100%;
 		width: 60%;
 		display: none;
-		margin: auto;
+		margin-inline: auto;
 		border-radius: 10px;
 	}
 
@@ -68,12 +79,49 @@
 		align-self: flex-end;
 	}
 
-	#button {
-		margin-inline: auto;
-		border-radius: 180%;
+	button {
+		background-color: #003c7e;
+		color: white;
+		border: none;
+		border-radius: 10px;
+		padding: 10px;
+		font-size: 1.5em;
+		font-family: 'Oswald', sans-serif;
+		transform: scale(1);
+		transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+	}
+
+	a {
+		text-decoration: none;
+		color: white;
+	}
+
+	.buttonbookcontainer {
+		margin-top: 10%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		height: 100%;
+		width: 50%;
+	}
+
+	#button {
+		margin-inline: auto;
+		height: 100px;
+		border-radius: 180%;
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+		align-items: end;
+	}
+
+	.logocontainer {
+		display: flex;
+		flex-direction: column;
+
+		justify-content: space-between;
+		align-items: center;
+		height: fit-content;
 	}
 
 	#divider {
@@ -85,6 +133,13 @@
 
 	#button > img {
 		height: 100%;
+		transform: scale(1);
+		transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+	}
+
+	#button > img:hover {
+		transform: scale(1.3);
+		transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
 	}
 
 	img {
@@ -95,7 +150,10 @@
 
 	#logo {
 		height: 50%;
-		top: 0;
+		grid-row-start: 2;
+		grid-row-end: 3;
+		height: fit-content;
+		margin-top: 5%;
 	}
 
 	.show {
@@ -116,20 +174,17 @@
 
 	@media screen and (max-width: 960px) {
 		h1 {
-			font-size: 1.5em;
+			font-size: 2em;
 		}
+		#logo {
+			height: 5em;
+		}
+	}
 
-		.centerdiv {
-			margin-inline: auto;
-		}
-
-		.centerdiv > img {
-			width: auto;
-			max-height: 25%;
-		}
-
-		#button > img {
-			height: 100%;
-		}
+	button:hover {
+		transform: scale(1.1);
+		transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+		/*make the mouse pointer a hand*/
+		cursor: pointer;
 	}
 </style>
