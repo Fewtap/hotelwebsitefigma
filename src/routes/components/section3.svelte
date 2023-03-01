@@ -21,7 +21,7 @@
 				hjertet af det arktiske paradis.
 			</p>
 		</div>
-		<a href="#" class="button">Vis mer information</a>
+		<a href="/rooms" class="button">Vis mer information</a>
 	</div>
 	<div class="card">
 		<img
