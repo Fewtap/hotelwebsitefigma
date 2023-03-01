@@ -104,23 +104,16 @@
 <style>
 	ul {
 		padding: 0;
-		font-family: Arial, Helvetica, sans-serif;
 	}
 
 	h2 {
 		text-align: center;
 	}
 
-	p {
-		font-family: Arial, Helvetica, sans-serif;
-	}
-
 	h3 {
 		color: crimson;
 		font-weight: 900;
-		font-family: Arial, Helvetica, sans-serif;
-		/*make it bold*/
-		font-weight: bold;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	}
 
 	div {
@@ -138,7 +131,7 @@
 
 	.left-column {
 		width: 30%;
-		background-color: antiquewhite;
+		background-color: #f1f1f1;
 		height: fit-content;
 		border-radius: 20px;
 		margin: 50px;
@@ -146,15 +139,13 @@
 	}
 
 	.right-column {
-		height: 95vh;
+		height: 1080px;
 		/*make the div scrollable but hide the scrollbar*/
 		overflow-y: scroll;
 		width: 50%;
-		background-color: antiquewhite;
+		background-color: #f1f1f1;
 		margin: 20px;
-		margin-top: 12.5%;
 		background-color: transparent;
-		/*set the margins on the top and botom so that the div is centered*/
 	}
 
 	.right-column::-webkit-scrollbar {
@@ -162,7 +153,7 @@
 	}
 
 	.card {
-		background-color: antiquewhite;
+		background-color: #f1f1f1;
 		height: 400px;
 		width: 100%;
 		display: flex;
@@ -204,7 +195,6 @@
 
 		.container {
 			height: 100vh;
-			background: none;
 		}
 	}
 
@@ -277,36 +267,6 @@
 			margin: 20px;
 			font-size: 2em;
 			padding: 20px;
-		}
-	}
-
-	/*a media query for 4k screens*/
-	@media screen and (min-width: 2000px) {
-		.right-column {
-			width: 60%;
-
-			height: auto;
-			overflow-y: visible;
-		}
-		.left-column {
-			width: fit-content;
-			padding: 5%;
-		}
-
-		.card {
-			height: auto;
-			width: auto;
-			font-size: 1.3em;
-		}
-
-		.card > img {
-			min-height: 100%;
-		}
-
-		.left-column {
-			width: 50%;
-			padding: 5%;
-			font-size: xx-large;
 		}
 	}
 </style>

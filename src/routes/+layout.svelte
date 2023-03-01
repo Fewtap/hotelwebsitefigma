@@ -7,13 +7,28 @@
 </script>
 
 <nav>
-	<button class:selected={url == '/' ? true : false}><a href="/">Hjem</a></button>
-	<button class:selected={url == '/rooms' ? true : false}><a href="/rooms">Værelser</a></button>
+	<div class="buttoncontainer">
+		<button class:selected={url == '/' ? true : false}><a href="/">Hjem</a></button>
+		<button class:selected={url == '/rooms' ? true : false}><a href="/rooms">Værelser</a></button>
+	</div>
+	<div class="logocontainer">
+		<img src="https://1000logos.net/wp-content/uploads/2021/04/Best-Western-logo.png" alt="" />
+	</div>
+	<div id="sep" />
 </nav>
 
 <slot />
 
 <style>
+	#sep {
+		height: 100%;
+		width: 1px;
+	}
+
+	.buttoncontainer {
+		display: flex;
+		height: 100%;
+	}
 	nav {
 		height: 5%;
 		display: flex;
@@ -22,9 +37,9 @@
 		left: 0;
 		/*add border radius at bottom right and bottom left*/
 		border-radius: 0 0 20px 20px;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
-		background-color: #302f2f6e;
+		background-color: #003d7e9c;
 		z-index: 1;
 		width: 100%;
 	}
@@ -37,18 +52,32 @@
 
 	button {
 		margin: 1em;
-		background-color: #6b6a6a;
+		background-color: #004c9e;
 		color: aliceblue;
 		height: 50%;
 		border-radius: 20px;
+		border: none;
 	}
 
 	.selected {
-		border: black solid 1px;
-		background-color: rgb(197, 195, 195);
+		background-color: #00799e;
+	}
+
+	.logocontainer {
+		display: flex;
+		position: absolute;
+		right: 0;
+		margin: 2%;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
+
+	.logocontainer > img {
+		height: 100%;
 	}
 
 	button:hover {
-		background-color: #b4b4b4;
+		background-color: #1479e6;
 	}
 </style>

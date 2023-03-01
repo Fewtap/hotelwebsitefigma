@@ -54,7 +54,7 @@
 		height: 100%;
 		width: 100%;
 
-		background: url('https://wallpapercave.com/wp/wp2378345.jpg');
+		background: url('https://images.pexels.com/photos/53389/iceberg-antarctica-polar-blue-53389.jpeg?cs=srgb&dl=pexels-pixabay-53389.jpg&fm=jpg');
 		background-size: cover;
 		/*make the background darker*/
 
@@ -77,9 +77,10 @@
 	}
 
 	#divider {
-		border: solid black 1px;
+		border: solid #003c7e 1px;
 		width: 100%;
-		height: 0px;
+		height: 1px;
+		background-color: #003c7e;
 	}
 
 	#button > img {

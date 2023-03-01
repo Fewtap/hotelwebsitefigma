@@ -28,6 +28,9 @@
 			<div class="titlecontainer">
 				<h2>Konference</h2>
 			</div>
+			<img
+				src="https://static.wixstatic.com/media/ca17e2_436acb3941bc46fdad0f4a6e662432fb~mv2.jpg/v1/fill/w_568,h_368,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/ca17e2_436acb3941bc46fdad0f4a6e662432fb~mv2.jpg"
+			/>
 			<div class="descriptioncontainer">
 				<p>
 					Hold din næste konference eller forretningsmøde på Hotel Ilulissat og få adgang til vores
@@ -86,6 +89,7 @@
 </div>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 	.numbercontainer {
 		padding: 1em;
 		border-radius: 20px;
@@ -96,7 +100,7 @@
 		height: 100%;
 		width: 100%;
 
-		background-image: url('../../assets/images/Component1.png');
+		background-image: url('https://bgfons.com/d/ice_texture2973.jpg');
 		background-size: cover;
 		overflow-y: visible;
 		display: flex;
@@ -111,10 +115,14 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		font-family: 'Oswald', sans-serif;
+		font-size: xx-large;
+		color: white;
 	}
 
 	a {
-		color: black;
+		color: white;
+		text-decoration: none;
 	}
 
 	.grid {
@@ -133,21 +141,24 @@
 	}
 
 	.card {
+		font-family: 'Oswald', sans-serif;
 		height: 100%;
-		background-color: cornflowerblue;
+		background-color: #003d7e9c;
 		grid-row-start: 3;
 		grid-row-end: 6;
 		display: grid;
 		border-radius: 1em;
-		grid-template-rows: 20% 70% 10%;
-		grid-template-columns: 100%;
+		grid-template-rows: 10% 30% 40% 10%;
+
 		align-items: center;
 		padding: 2em;
 		justify-content: center;
+		color: rgb(255, 255, 255);
 	}
 
 	.titlecontainer {
-		grid-column: span 2;
+		grid-column-start: 1;
+		grid-column-end: 3;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -156,8 +167,15 @@
 	.descriptioncontainer > p {
 		margin-inline: 20px;
 		text-align: center;
-		grid-column: span 2;
+		grid-column-start: 1;
+		grid-column-end: 3;
 		font-size: 0.9em;
+	}
+
+	img {
+		height: 100%;
+		grid-column-start: 1;
+		grid-column-end: 3;
 	}
 
 	.actioncontainer {
