@@ -81,8 +81,11 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+	//create a variable that holds the primary color
+	$primary-color: #003d7e;
+	$secondary-color: #f2f2f2;
 
 	.container {
 		height: 100%;
@@ -237,6 +240,16 @@
 			font-size: 1.5em;
 			min-height: 50%;
 			max-width: 20%;
+		}
+	}
+
+	@media screen and (max-height: 1500px) and (min-width: 1000px) {
+		.card p {
+			font-size: 0.8em;
+		}
+
+		.card {
+			width: 95%;
 		}
 	}
 </style>

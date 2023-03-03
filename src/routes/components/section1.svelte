@@ -7,6 +7,7 @@
 	import blacklogo from '../../assets/images/logoblack.png';
 
 	let isInView: boolean = false;
+	let currenttime = new Date();
 
 	function scrolltosection() {
 		let section2 = document.getElementById('cardscontainer');
@@ -16,7 +17,7 @@
 
 	setTimeout(() => {
 		isInView = true;
-	}, 500);
+	}, 50);
 </script>
 
 <div class="maincontainer">

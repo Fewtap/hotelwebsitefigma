@@ -1,3 +1,9 @@
+<script>
+	//log the document dimensions
+	console.log(document.documentElement.clientWidth);
+	console.log('Height: ' + document.documentElement.clientHeight.toString() + 'px');
+</script>
+
 <div class="maincontainer" id="cardscontainer">
 	<div class="grid">
 		<div class="pagetitle">
@@ -182,6 +188,13 @@
 		box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.8);
 		transition: ease-in 0.2s;
 	}
+
+	@media screen and (max-height: px) {
+		p {
+			font-size: 0.8em;
+		}
+	}
+
 	@media screen and (max-width: 800px) {
 		.descriptioncontainer {
 			font-size: 0.7em;

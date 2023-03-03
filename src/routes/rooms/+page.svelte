@@ -1,3 +1,36 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+	let rightcolumnheight: number = 0;
+
+	onMount(() => {
+		console.log(rightcolumnheight / 2 + 'px');
+	});
+
+	function handleScroll() {
+		let cards = document.getElementsByClassName('card');
+		console.log('scrolling');
+
+		for (let i = 0; i < cards.length; i++) {
+			let bottom = cards[i].getBoundingClientRect().bottom;
+			let top = cards[i].getBoundingClientRect().top;
+
+			if (bottom < 0) {
+				if (i == 0) {
+					console.log('Class added');
+				}
+
+				cards[i].classList.add('a');
+			} else if (bottom > 0) {
+				if (i == 0) {
+					console.log('Class removed');
+				}
+				console.log('Class removed');
+				cards[i].classList.remove('a');
+			}
+		}
+	}
+</script>
+
 <div class="container">
 	<div class="left-column">
 		<h2>VÆRELSER</h2>
@@ -26,7 +59,12 @@
 			<li>Morgenkåbe og sutsko ved henvendelse</li>
 		</ul>
 	</div>
-	<div class="right-column">
+	<div
+		class="right-column"
+		bind:offsetHeight={rightcolumnheight}
+		on:scroll={handleScroll}
+		id="right-column"
+	>
 		<div class="card">
 			<img
 				src="https://static.wixstatic.com/media/ca17e2_34a2a5c8462b4ae99aad92f6c1b93412~mv2.jpg/v1/fill/w_620,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/ca17e2_34a2a5c8462b4ae99aad92f6c1b93412~mv2.jpg"
@@ -102,6 +140,10 @@
 </div>
 
 <style>
+	.a {
+		background: red;
+	}
+
 	ul {
 		padding: 0;
 	}
