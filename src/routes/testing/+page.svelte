@@ -30,33 +30,6 @@
 </script>
 
 <div class="container">
-	<div class="left-column">
-		<h2>VÆRELSER</h2>
-		<p>
-			Best Western Plus Hotel Ilulissat har 78 moderne værelser fordelt på 5 forskellige
-			værelsestyper - 30 standardværelser, 12 familieværelser, 18 executive værelser, 16 superior
-			værelser og 2 suiter. Det er derfor et af Grønlands største hoteller!
-		</p>
-
-		<h4>
-			<br />Alle værelser har privat bad og toilet, dobbeltsenge, samt nedenstående faciliteter:
-		</h4>
-		<ul>
-			<li>Gratis trådløst internet</li>
-			<li>Fladskærmsfjernsyn</li>
-			<li>Chrome Cast</li>
-			<li>Skrivebord</li>
-			<li>Gæstfrihedsbakke med elkedel</li>
-			<li>Kaffe og te</li>
-			<li>Ekstra hovedpude</li>
-			<li>Pengeskab</li>
-			<li>Hårtørrer</li>
-			<li>Babyseng ved henvendelse</li>
-			<li>Strygeservice ved henvendelse i receptionen</li>
-			<li>Toiletartikler, herunder shampoo, body lotion og sæbe</li>
-			<li>Morgenkåbe og sutsko ved henvendelse</li>
-		</ul>
-	</div>
 	<div
 		class="right-column"
 		bind:offsetHeight={rightcolumnheight}
@@ -65,16 +38,15 @@
 	>
 		<div class="card">
 			<img
-				src="https://static.wixstatic.com/media/ca17e2_34a2a5c8462b4ae99aad92f6c1b93412~mv2.jpg/v1/fill/w_620,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/ca17e2_34a2a5c8462b4ae99aad92f6c1b93412~mv2.jpg"
+				src="https://static.wixstatic.com/media/ca17e2_e28aa910ae9145d6872ee0a78958d0a9~mv2.jpg/v1/fill/w_620,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/ca17e2_e28aa910ae9145d6872ee0a78958d0a9~mv2.jpg"
 				alt="Placeholder Image"
+				class="card-image"
 			/>
 			<div class="card-content">
-				<h3>STANDARD VÆRELSE</h3>
+				<h3>SUPERIOR VÆRELSE</h3>
 				<p>
-					Alle standardværelser har dobbeltsenge (2x90 cm) og moderne indretning. Der er privat
-					badeværelse med hovedbruser og toiletartikler, som shampoo, body lotion og sæbe.
-					Hårtørreren vil være under håndvasken i badeværelset. Udsigten fra værelset vil være ud
-					over Ilulissat by og dens omliggende smukke natur. Størrelse: 14,7 kvm
+					Samtlige superiorværelser har dobbeltsenge (2x90 cm). Udsigten fra værelset vil være ud
+					over Ilulissat Isfjord og Diskobugten. Størrelse: 21,1 kvm
 				</p>
 			</div>
 		</div>
@@ -137,7 +109,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	.a {
 		background: red;
 	}
@@ -198,29 +170,44 @@
 	}
 
 	.card {
-		margin-top: 50%;
-		background-color: #f1f1f1;
-		height: 400px;
-		width: 100%;
+		background-color: transparent;
+		position: relative;
+		cursor: pointer;
 		display: flex;
+		flex-direction: column;
 		align-items: center;
-		margin-inline: auto;
-		border-radius: 20px;
-
-		/*add margin to the bottom of the card*/
-		margin-bottom: 20px;
 	}
 
-	.card img {
-		max-width: 400px;
-		height: 400px;
-		/*make the image have the same border radius as the card*/
-		border-radius: 20px 0 0 20px;
+	.card-image {
+		width: 100%;
+		border-radius: 20px 20px 0 0;
+		transition: all 0.3s ease-in-out;
+		/*add a border to the bottom of the image*/
+		border-bottom: 1px solid #f1f1f1;
+	}
+
+	.card:hover .card-image {
+		opacity: 0.7;
 	}
 
 	.card-content {
-		margin-inline: 20px;
+		background-color: #f1f1f1;
+		border-radius: 0 0 20px 20px;
+		width: 100%;
+		padding: 20px;
+		display: block;
+		transform: scaleY(0);
+		transform-origin: top;
 		font-size: 1.3em;
+		transition: all 0.3s ease-in-out;
+		animation: bounce 1s ease-in-out infinite;
+		animation-delay: 500ms;
+	}
+
+	.card:hover .card-content {
+		transform: scaleY(1);
+		transition: cubic-bezier(0.33, 1.03, 0.76, 1.27) 0.3s;
+		transform-origin: top;
 	}
 
 	@media screen and (max-width: 1400px) {
