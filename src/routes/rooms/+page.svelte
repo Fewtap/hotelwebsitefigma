@@ -3,28 +3,73 @@
 	let rightcolumnheight: number = 0;
 
 	onMount(() => {
-		let card = document.querySelectorAll('.card')[0];
-		let column = document.getElementById('right-column');
-		column?.scrollTo(card);
+		//if the width of the screen is over 1000px
+		if (window.innerWidth > 1000) {
+			handleScroll();
+		}
+
+		//on window resize
+		window.addEventListener('resize', () => {
+			if (window.innerWidth > 1000) {
+				handleScroll();
+			} else {
+				let cards = document.querySelectorAll('.card');
+				cards.forEach((card) => {
+					card.classList.remove('hide');
+					card.classList.remove('show');
+					card.style.opacity = '1';
+					card.style.transform = 'scale(1)';
+				});
+			}
+		});
 	});
 
 	function handleScroll() {
-		let rightcolumn = document.getElementById('right-column');
-		let cards = document.querySelectorAll('.card');
+		const rightColumn = document.getElementById('right-column');
+		const cards = document.querySelectorAll('.card');
+		const rightColumnHeight = rightColumn.clientHeight;
+		const rightcolumncenter = rightColumnHeight / 2 + rightColumnHeight;
 
-		//get the card closest to the middle of the right column
-		console.log('scrolling');
+		const rightColumnTop = rightColumn.getBoundingClientRect().top;
 
-		cards.forEach((element) => {
-			let bottom = element.getBoundingClientRect().bottom;
-			let top = element.getBoundingClientRect().top;
+		cards.forEach((card) => {
+			const cardRect = card.getBoundingClientRect();
+			const cardTop = cardRect.top - rightColumnTop;
+			const cardBottom = cardRect.bottom - rightColumnTop;
+			const cardMiddle = (cardTop + cardBottom) / 2;
 
-			//get the opacity of the card based on how far it is from the top of the right column
-			let opacity = 1 - (top / rightcolumnheight) * 2;
+			// Calculate the opacity based on the card's position relative to the middle of the right column
+			let value = 1 - (cardMiddle / rightcolumncenter) * 2 + 0.4;
 
-			opacity += 0.5;
+			if (value < 0) value = 0;
 
-			element.style.opacity = opacity.toString();
+			//set the opacity and the scale of the card
+			if (value > 0.5) {
+				card.classList.remove('hide');
+				card.classList.add('show');
+			} else {
+				card.classList.add('hide');
+				card.classList.remove('show');
+				card.style.opacity = value.toString();
+				card.style.transform = `scale(${value})`;
+			}
+
+			if (value > 1) {
+				card.classList.add('hide');
+				card.classList.remove('show');
+				//if the value is 1.2 set the opacity to 0.8 and so on
+				card.style.opacity = (2 - value).toString();
+				card.style.transform = `scale(${2 - value})`;
+				if (card === cards[cards.length - 1] && value > 0.5) {
+				}
+
+				//
+			}
+
+			if (card === cards[cards.length - 1] && value > 0.5) {
+				card.classList.remove('hide');
+				card.classList.add('show');
+			}
 		});
 	}
 </script>
@@ -138,6 +183,15 @@
 </div>
 
 <style>
+	:global(.show) {
+		transform: scale(1) !important;
+		opacity: 1 !important;
+		transition: ease 0.1s;
+	}
+
+	:global(.hide) {
+		transition: ease 0.1s;
+	}
 	.a {
 		background: red;
 	}
@@ -166,6 +220,7 @@
 		justify-content: space-around;
 		background-repeat: no-repeat;
 		background-size: cover;
+
 		background: url('https://static.wixstatic.com/media/nsplsh_65324d6e4b6c4546635467~mv2_d_7360_4912_s_4_2.jpg/v1/fill/w_2543,h_1556,al_t,q_90,usm_0.66_1.00_0.01,enc_auto/nsplsh_65324d6e4b6c4546635467~mv2_d_7360_4912_s_4_2.jpg');
 	}
 
@@ -179,8 +234,8 @@
 	}
 
 	.right-column {
-		padding-top: 5%;
-		height: 1080px;
+		padding: 15% 0px 25% 0px;
+		height: 100vh;
 		/*make the div scrollable but hide the scrollbar*/
 
 		/*center the content without flexbox*/
@@ -198,9 +253,8 @@
 	}
 
 	.card {
-		margin-top: 50%;
 		background-color: #f1f1f1;
-		height: 400px;
+		height: 500px;
 		width: 100%;
 		display: flex;
 		align-items: center;
@@ -212,8 +266,7 @@
 	}
 
 	.card img {
-		max-width: 400px;
-		height: 400px;
+		height: 100%;
 		/*make the image have the same border radius as the card*/
 		border-radius: 20px 0 0 20px;
 	}
@@ -237,6 +290,7 @@
 	@media screen and (min-width: 1024px) {
 		:global(body) {
 			background: url('https://static.wixstatic.com/media/nsplsh_65324d6e4b6c4546635467~mv2_d_7360_4912_s_4_2.jpg/v1/fill/w_2543,h_1556,al_t,q_90,usm_0.66_1.00_0.01,enc_auto/nsplsh_65324d6e4b6c4546635467~mv2_d_7360_4912_s_4_2.jpg');
+			background-repeat: no-repeat;
 		}
 
 		.container {

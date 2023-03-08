@@ -66,7 +66,7 @@
 		height: 100%;
 		width: 100%;
 
-		background: url('https://images.pexels.com/photos/53389/iceberg-antarctica-polar-blue-53389.jpeg?cs=srgb&dl=pexels-pixabay-53389.jpg&fm=jpg');
+		background: url('https://images.wallpaperscraft.com/image/single/whale_tail_ocean_123547_2560x1440.jpg');
 		background-size: cover;
 		/*make the background darker*/
 
