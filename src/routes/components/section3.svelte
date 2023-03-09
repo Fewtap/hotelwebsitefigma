@@ -133,7 +133,7 @@
 		grid-row-start: 2;
 		grid-row-end: 4;
 		border-radius: 20px;
-		background-color: #003d7e9c;
+		background-color: $primary-color;
 		font-family: 'Oswald', sans-serif;
 		color: white;
 		margin-bottom: 10%;
@@ -154,6 +154,7 @@
 		font-size: 1.8em;
 		text-align: left;
 		margin: 20px;
+		margin-inline: auto;
 	}
 	.card p {
 		margin: 5%;
@@ -202,14 +203,17 @@
 			font-size: 0.3rem;
 			margin: 10px;
 			padding: 10px;
+			display: flex;
+			flex-direction: column;
 			/*only have 3 rows in the card*/
 			grid-template-rows: 10% 70% 20%;
 			background-color: #003d7e;
 		}
 
 		img {
-			/*disable the image */
-			display: none;
+			min-width: 100%;
+
+			border-radius: 20px 20px 0 0;
 		}
 
 		.card h2 {
@@ -238,8 +242,9 @@
 			justify-content: center;
 			align-items: center;
 			font-size: 1.5em;
-			min-height: 50%;
+			min-height: 100%;
 			max-width: 20%;
+			padding: 2em;
 		}
 	}
 
