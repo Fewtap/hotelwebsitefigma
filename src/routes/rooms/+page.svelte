@@ -182,32 +182,61 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
+	$accent: #003c7e;
+	$primary: #f1e1ce;
+
+	@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 	:global(.show) {
 		transform: scale(1) !important;
 		opacity: 1 !important;
-		transition: ease 0.1s;
+		transition: ease 0.3s;
 	}
 
 	:global(.hide) {
-		transition: ease 0.1s;
+		transition: ease 0.3s;
 	}
-	.a {
-		background: red;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	ul,
+	li,
+	span,
+	div,
+	button,
+	a {
+		font-family: 'Oswald', sans-serif;
+	}
+
+	p {
+		font-size: 1em;
+	}
+
+	h4 {
+		font-size: 1.2em;
+		font-weight: 900;
 	}
 
 	ul {
 		padding: 0;
+		font-size: 0.9em;
+		text-align: left;
 	}
 
 	h2 {
 		text-align: center;
+		color: $accent;
+		font-weight: 700;
 	}
 
 	h3 {
-		color: crimson;
-		font-weight: 900;
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		color: $accent;
+		font-weight: 400;
 	}
 
 	div {
@@ -226,11 +255,14 @@
 
 	.left-column {
 		width: 30%;
-		background-color: #f1f1f1;
-		height: fit-content;
+		background-color: $primary;
+		height: 80%;
 		border-radius: 20px;
 		margin: 50px;
 		padding: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
 	.right-column {
@@ -243,9 +275,13 @@
 
 		overflow-y: scroll;
 		width: 50%;
-		background-color: #f1f1f1;
+
 		margin: 20px;
 		background-color: transparent;
+
+		& p {
+			font-size: 0.8em;
+		}
 	}
 
 	.right-column::-webkit-scrollbar {
@@ -253,7 +289,7 @@
 	}
 
 	.card {
-		background-color: #f1f1f1;
+		background-color: $primary;
 		height: 500px;
 		width: 100%;
 		display: flex;
@@ -266,6 +302,7 @@
 	}
 
 	.card img {
+		max-width: 60%;
 		height: 100%;
 		/*make the image have the same border radius as the card*/
 		border-radius: 20px 0 0 20px;
@@ -324,7 +361,7 @@
 		}
 
 		.card img {
-			width: 100%;
+			min-width: 100%;
 			height: auto;
 			border-radius: 20px 20px 0 0;
 		}

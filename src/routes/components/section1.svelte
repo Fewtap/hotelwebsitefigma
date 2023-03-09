@@ -75,7 +75,7 @@
 
 	h1 {
 		top: auto;
-		font-size: 4em;
+		font-size: 5em;
 		text-align: center;
 		align-self: flex-end;
 	}
