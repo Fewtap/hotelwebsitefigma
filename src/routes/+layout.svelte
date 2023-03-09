@@ -19,7 +19,10 @@
 
 <slot />
 
-<style>
+<style lang="scss">
+	@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+	$primary-color: #003d7e;
+
 	#sep {
 		height: 100%;
 		width: 1px;
@@ -28,9 +31,10 @@
 	.buttoncontainer {
 		display: flex;
 		height: 100%;
+		margin-left: 1em;
 	}
 	nav {
-		height: 5%;
+		height: 10%;
 		display: flex;
 		position: absolute;
 		top: 0;
@@ -39,7 +43,7 @@
 		border-radius: 0 0 20px 20px;
 		justify-content: space-between;
 		align-items: center;
-		background-color: #003d7e9c;
+
 		z-index: 1;
 		width: 100%;
 	}
@@ -48,26 +52,27 @@
 		margin: 1em;
 		text-decoration: none;
 		color: aliceblue;
+		font-family: 'Oswald', sans-serif;
+		font-size: 1.5em;
 	}
 
 	button {
 		margin: 1em;
-		background-color: #004c9e;
-		color: aliceblue;
+		background-color: transparent;
 		height: 50%;
 		border-radius: 20px;
 		border: none;
 	}
 
-	.selected {
-		background-color: #00799e;
+	.selected > a {
+		color: $primary-color;
 	}
 
 	.logocontainer {
 		display: flex;
 		position: absolute;
 		right: 0;
-		margin: 2%;
+		margin-right: 5em;
 		justify-content: center;
 		align-items: center;
 		height: 100%;
@@ -77,7 +82,16 @@
 		height: 100%;
 	}
 
-	button:hover {
-		background-color: #1479e6;
+	button > *:hover {
+		color: gray;
+	}
+
+	@media screen and (max-width: 960px) {
+		nav {
+			height: 5%;
+		}
+		.logocontainer {
+			margin-right: 1em;
+		}
 	}
 </style>

@@ -107,7 +107,7 @@
 		justify-content: center;
 		align-items: center;
 		height: 100%;
-		background-color: #003d7e79;
+		background-color: $primary-color;
 		width: fit-content;
 		height: fit-content;
 		margin-inline: auto;
@@ -137,6 +137,7 @@
 		font-family: 'Oswald', sans-serif;
 		color: white;
 		margin-bottom: 10%;
+		font-size: 1.3em;
 	}
 
 	.descriptioncontainer {
@@ -166,9 +167,9 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: #4caf50;
+		background-color: #75dddd;
 		color: white;
-		padding: auto;
+		padding: 2%;
 		text-align: center;
 		text-decoration: none;
 		border-radius: 5px;

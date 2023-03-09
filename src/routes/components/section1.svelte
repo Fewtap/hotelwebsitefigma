@@ -55,9 +55,10 @@
 	.centerdiv {
 		grid-template-columns: 1fr;
 		grid-template-rows: 40% 1% 35% 1fr 10%;
-		height: 100%;
+		min-height: 80%;
 		width: 60%;
 		display: none;
+
 		margin-inline: auto;
 		border-radius: 10px;
 	}
@@ -69,8 +70,6 @@
 		background: url('https://images.wallpaperscraft.com/image/single/whale_tail_ocean_123547_2560x1440.jpg');
 		background-size: cover;
 		/*make the background darker*/
-
-		display: flex;
 	}
 
 	h1 {
@@ -114,6 +113,7 @@
 		flex-direction: column;
 		justify-content: end;
 		align-items: end;
+		margin-top: 6em;
 	}
 
 	.logocontainer {
@@ -179,6 +179,37 @@
 		}
 		#logo {
 			height: 5em;
+		}
+		.centerdiv {
+			width: 90%;
+		}
+	}
+
+	@media screen and (max-width: 1024px) {
+		h1 {
+			font-size: 3em;
+		}
+		#logo {
+			height: 5em;
+		}
+		.centerdiv {
+			width: 90%;
+		}
+	}
+
+	@media screen and (min-width: 2000px) {
+		h1 {
+			font-size: 2em;
+		}
+		#logo {
+			height: 5em;
+		}
+		.centerdiv {
+			width: 90%;
+		}
+
+		#button {
+			margin-top: 15em;
 		}
 	}
 
