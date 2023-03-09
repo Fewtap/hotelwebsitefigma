@@ -250,7 +250,11 @@
 	}
 
 	@media screen and (max-height: 1500px) and (min-width: 1000px) {
-		.card p {
+		.card > * {
+			font-size: 0.9em;
+		}
+
+		.card h2 {
 			font-size: 0.8em;
 		}
 

@@ -185,9 +185,21 @@
 		}
 	}
 
-	@media screen and (max-width: 1024px) {
+	@media screen and (max-width: 1280px) {
 		h1 {
-			font-size: 3em;
+			font-size: 2.5em;
+		}
+		#logo {
+			height: 5em;
+		}
+		.centerdiv {
+			width: 90%;
+		}
+	}
+
+	@media screen and (min-width: 1000px) and (min-height: 800px) {
+		h1 {
+			font-size: 5em;
 		}
 		#logo {
 			height: 5em;
@@ -199,10 +211,10 @@
 
 	@media screen and (min-width: 2000px) {
 		h1 {
-			font-size: 2em;
+			font-size: 2.5em;
 		}
 		#logo {
-			height: 5em;
+			height: 10em;
 		}
 		.centerdiv {
 			width: 90%;
@@ -210,6 +222,12 @@
 
 		#button {
 			margin-top: 15em;
+		}
+	}
+
+	@media screen and (max-width: 450px) {
+		h1 {
+			font-size: 1.5em;
 		}
 	}
 
