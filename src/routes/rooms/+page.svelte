@@ -416,4 +416,17 @@
 			padding: 20px;
 		}
 	}
+
+	@media screen and (min-width: 1200px) {
+		.container {
+			overflow: hidden;
+		}
+		li {
+			font-size: 0.9em;
+		}
+
+		p {
+			font-size: 0.9em;
+		}
+	}
 </style>

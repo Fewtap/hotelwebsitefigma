@@ -262,4 +262,10 @@
 			width: 95%;
 		}
 	}
+
+	@media screen and (min-width: 1000px) {
+		p {
+			font-size: 0.8em !important;
+		}
+	}
 </style>

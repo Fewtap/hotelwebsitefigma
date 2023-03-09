@@ -231,6 +231,12 @@
 		}
 	}
 
+	@media screen and (max-width: 1900) {
+		h1 {
+			font-size: 2em;
+		}
+	}
+
 	button:hover {
 		transform: scale(1.1);
 		transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
